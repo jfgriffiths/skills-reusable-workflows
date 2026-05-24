@@ -26,27 +26,27 @@ jobs:
       - run: npm ci
       - run: npm run lint
 
-tests:
-  name: Tests with Coverage
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v6
-    - uses: actions/setup-node@v6
-      with: 
-        node-version: ${{ inputs.node-verison }}
-        cache: npm
-    - run: npm ci
-    - run: npm run test:Coverage
+  tests:
+    name: Tests with Coverage
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with: 
+          node-version: ${{ inputs.node-verison }}
+          cache: npm
+      - run: npm ci
+      - run: npm run test:Coverage
 
-e2e: 
-  name: E2E Tests with Playwright
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v6
-    - uses: actions/setup-node@v6
-      with: 
-        node-version: ${{ inputs.node-version }}
-        cache: npm
-    - run: npm ci
-    - run: npx playwright install --with-deps chromium
-    - run: npm run tests:e2e
+  e2e: 
+    name: E2E Tests with Playwright
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with: 
+          node-version: ${{ inputs.node-version }}
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run tests:e2e
