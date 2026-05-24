@@ -41,5 +41,5 @@ jobs:
                   | Item | Link |
                   | --- | --- |
                   | GitHub page URL | ${{ needs.github-pages.outputs.page_url }} |
-                  | Workflow logs | https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }} |
+                  | Workflow Logs | https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }} |
 
