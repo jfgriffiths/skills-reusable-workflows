@@ -36,7 +36,7 @@ jobs:
           node-version: ${{ inputs.node-version }}
           cache: npm
       - run: npm ci
-      - run: npm run test:Coverage
+      - run: npm run test:coverage
 
   e2e: 
     name: E2E Tests with Playwright
